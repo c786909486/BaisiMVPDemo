@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BaisiMVPDemo.iml" filepath="$PROJECT_DIR$/BaisiMVPDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/twrefresh/twrefresh.iml" filepath="$PROJECT_DIR$/twrefresh/twrefresh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vuandroidadsdk/vuandroidadsdk.iml" filepath="$PROJECT_DIR$/vuandroidadsdk/vuandroidadsdk.iml" />
+    </modules>
+  </component>
+</project>

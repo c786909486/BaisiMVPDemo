@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:divider="@drawable/diver_line"
+    android:showDividers="middle">
+
+   <FrameLayout
+       android:id="@+id/main_content"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"></FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/mostBackground"
+        android:gravity="center_vertical"
+        android:padding="3dp"
+        >
+        <TextView
+            android:id="@+id/jinhua_btn"
+            style="@style/main_bottom_style"
+            android:drawableTop="@drawable/jinghua"
+            android:text="精华"
+            />
+        <TextView
+            android:id="@+id/xintie_btn"
+            style="@style/main_bottom_style"
+            android:drawableTop="@drawable/zuixin"
+            android:text="新帖"
+            />
+        <ImageView
+            android:id="@+id/fabu_btn"
+            style="@style/main_bottom_style"
+            android:src="@drawable/fabu"
+
+            />
+        <TextView
+           android:id="@+id/shequ_btn"
+            style="@style/main_bottom_style"
+            android:drawableTop="@drawable/guanzhu"
+            android:text="社区"
+            />
+        <TextView
+            android:id="@+id/wode_btn"
+            style="@style/main_bottom_style"
+            android:drawableTop="@drawable/wode"
+            android:text="我的"
+            />
+
+    </LinearLayout>
+</LinearLayout>
