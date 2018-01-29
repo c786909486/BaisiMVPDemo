@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--title bar-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/baisiColor">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_centerInParent="true"
+            android:gravity="center_vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/baisibudejie"
+                />
+            <ImageView
+                android:id="@+id/icon_refresh"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/top_refresh_btn"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/icon_suiji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_margin="16dp"
+            android:src="@drawable/top_suiji_btn"/>
+    </RelativeLayout>
+    <!--tab bar-->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tv_tab"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/baisiColor"
+        app:tabMode="scrollable"
+        app:tabGravity="center"
+        app:tabBackground="@color/baisiColor"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/tabTextColor"
+        app:tabIndicatorColor="@color/white"
+        android:paddingBottom="2dp"
+        android:paddingLeft="16dp">
+    </android.support.design.widget.TabLayout>
+
+    <!--fragment-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/content_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

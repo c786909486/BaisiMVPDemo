@@ -27,6 +27,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:26.0.0-alpha1'
     compile 'com.android.support:design:26.0.0-alpha1'
+    compile project(':twrefresh')
     compile project(':vuandroidadsdk')
     compile files('libs/glide-3.7.0.jar')
     compile files('libs/litepal-1.5.1-src.jar')
