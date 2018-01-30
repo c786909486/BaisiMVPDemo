@@ -6,6 +6,7 @@
     android:layout_height="match_parent">
     <!--title bar-->
     <RelativeLayout
+        android:id="@+id/title_bar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/baisiColor">
@@ -50,7 +51,8 @@
         app:tabTextColor="@color/tabTextColor"
         app:tabIndicatorColor="@color/white"
         android:paddingBottom="2dp"
-        android:paddingLeft="16dp">
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
     </android.support.design.widget.TabLayout>
 
     <!--fragment-->

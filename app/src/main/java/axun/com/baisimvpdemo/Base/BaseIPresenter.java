@@ -2,6 +2,7 @@ package axun.com.baisimvpdemo.Base;
 
 import android.content.Context;
 import android.os.Handler;
+import android.util.Log;
 
 import com.example.vuandroidadsdk.okhttp.request.RequestParams;
 
@@ -20,13 +21,13 @@ public class BaseIPresenter {
         mModule = new BaseIXfml(context);
     }
 
-    public void getDataByPost(String url,RequestParams params){
+    public void getDataByPost(String url, RequestParams params, final boolean isRefresh){
         if (mModule!=null){
             showProgress("");
             mModule.getNetDataByPost(url, params, new Call() {
                 @Override
                 public void onReceiveJson(String json) {
-                    workAfterRefresh(json);
+                    workAfterGetData(isRefresh,json);
                 }
 
                 @Override
@@ -38,13 +39,15 @@ public class BaseIPresenter {
         }
     }
 
-    public void getDataByGet(String url){
+    public void getDataByGet(String url, final boolean isRefresh){
         if (mModule!=null){
             showProgress("");
+            Log.d("NET","请求url："+url);
             mModule.getNetDataByGet(url, new Call() {
                 @Override
                 public void onReceiveJson(String json) {
-                    workAfterRefresh(json);
+                    Log.d("NET","返回json："+json);
+                    workAfterGetData(isRefresh,json);
                 }
 
                 @Override
@@ -57,8 +60,8 @@ public class BaseIPresenter {
     }
 
 
-    private void workAfterRefresh(String json){
-        showUIData(json);
+    protected void workAfterGetData(boolean isRefresh,String json){
+        showUIData(isRefresh,json);
         hideProgress();
         showRefreshNum();
         new Handler().postDelayed(new Runnable(){
@@ -70,48 +73,48 @@ public class BaseIPresenter {
     }
 
 
-    private void showProgress(String msg){
+    protected void showProgress(String msg){
         if (mView!=null){
             mView.showProgress(msg);
         }
     }
 
-    private void hideProgress(){
+    protected void hideProgress(){
         if (mView!=null){
             mView.hideProgress();
         }
     }
 
-    private void showDialog(){
+    protected void showDialog(){
         if (mView!=null){
             mView.showDialog();
         }
     }
 
-    private void hideDialog(){
+    protected void hideDialog(){
         if (mView!=null){
             mView.hideDialog();
         }
     }
 
-    private void showUIData(String json){
+    public void showUIData(boolean isRefresh,String json){
         if (mView!=null){
-            mView.showUIData(json);
+            mView.showUIData(isRefresh,json);
         }
     }
 
-    private void showError(String error){
+    protected void showError(String error){
         if (mView!= null){
             mView.showErrorData(error);
         }
     }
 
-    private void showRefreshNum(){
+    protected void showRefreshNum(){
         if (mView!=null){
             mView.showRefreshNum();
         }
     }
-    private void hideRefreshNum(){
+    protected void hideRefreshNum(){
         if (mView!=null){
             mView.hideRefreshNum();
         }

@@ -16,6 +16,48 @@
         <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/mostTextColor</item>
     </style>
+    <style name="TabLayoutTextSize">
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="RefreshToastStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:background">#996699ff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="myInfoStyle">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:drawablePadding">5dp</item>
+    </style>
+    <style name="back_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">返回</item>
+        <item name="android:textSize">@dimen/backSize</item>
+        <item name="android:textColor">@drawable/title_txt_press</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:drawableLeft">@drawable/collect_left_button_press</item>
+        <item name="android:layout_marginLeft">10dp</item>
+    </style>
+    <style name="manager_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@drawable/manager_text_color</item>
 
+        <item name="android:textSize">@dimen/tuijian_title</item>
+        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingLeft">15dp</item>
+        <item name="android:paddingRight">15dp</item>
+    </style>
 
 </resources>

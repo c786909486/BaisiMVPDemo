@@ -1,6 +1,7 @@
 package axun.com.baisimvpdemo.view;
 
 import axun.com.baisimvpdemo.Base.BaseIView;
+import axun.com.baisimvpdemo.response.ItemTypeBean;
 
 /**
  * Created by Administrator on 2018/1/29.
@@ -8,7 +9,7 @@ import axun.com.baisimvpdemo.Base.BaseIView;
 
 public interface JinhuaView extends BaseIView {
 
-    void setTabs();
+    void setTabs(ItemTypeBean.MenusBean bean);
 
 
 

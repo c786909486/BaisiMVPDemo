@@ -18,7 +18,7 @@ public interface BaseIView {
     //关闭加载
     void hideProgress();
     //更新UI数据
-    void showUIData(String json);
+    void showUIData(boolean isRefresh,String json);
     //显示错误数据
     void showErrorData(String error);
     //显示更新数量
