@@ -22,6 +22,8 @@ import axun.com.baisimvpdemo.R;
 import axun.com.baisimvpdemo.adapter.MyContentAdapter;
 import axun.com.baisimvpdemo.net.URL;
 import axun.com.baisimvpdemo.response.BaisiBean;
+import axun.com.baisimvpdemo.ui.BudejieLoadMore;
+import axun.com.baisimvpdemo.ui.BudejieRefresh;
 
 /**
  * Created by Administrator on 2018/1/30.
@@ -31,6 +33,8 @@ public class ListFragment extends Fragment implements BaseIView{
 
     private TextView mShowRefreshNum;
     private TwinklingRefreshLayout mRefreshLayout;
+    private BudejieRefresh refresh;
+    private BudejieLoadMore loadMore;
     private RecyclerView mContentList;
     private MyContentAdapter mAdapter;
     private String name;
@@ -46,7 +50,9 @@ public class ListFragment extends Fragment implements BaseIView{
         getNameAndUrl();
         initView(view);
         presenter = new BaseIPresenter(this,getContext());
-        presenter.getDataByGet(url+ URL.commonApi(page),true);
+        if (!name.equals("直播")){
+            presenter.getDataByGet(url+ URL.commonApi(page),true);
+        }
         return view;
     }
 
@@ -59,6 +65,10 @@ public class ListFragment extends Fragment implements BaseIView{
         mShowRefreshNum = (TextView) view.findViewById(R.id.show_refresh_num);
         mRefreshLayout = (TwinklingRefreshLayout) view.findViewById(R.id.refresh_layout);
         mContentList = (RecyclerView) view.findViewById(R.id.content_list);
+        refresh = new BudejieRefresh(getContext());
+        loadMore = new BudejieLoadMore(getContext());
+        mRefreshLayout.setHeaderView(refresh);
+        mRefreshLayout.setBottomView(loadMore);
         if (name.equals("视频")){
             mContentList.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
         }else {

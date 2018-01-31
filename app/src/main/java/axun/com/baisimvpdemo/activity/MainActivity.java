@@ -49,11 +49,13 @@ public class MainActivity extends BaseActivity implements MainView,View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         presenter = new MainPresenter(this, getContext());
+        fgm = getSupportFragmentManager();
+        initView();
         //获取tab数据
         presenter.getItemData(true,URL.typeItem);
-        fgm = getSupportFragmentManager();
 
-        initView();
+
+
     }
 
     @Override
@@ -165,6 +167,7 @@ public class MainActivity extends BaseActivity implements MainView,View.OnClickL
          if(TextUtils.isEmpty(SPUtils.getStringSp(getContext(),"type_json"))){
              SPUtils.putStringSp(getContext(),"type_json",json);
          }
+        mJinhuaBtn.performClick();
 
     }
 
@@ -199,7 +202,7 @@ public class MainActivity extends BaseActivity implements MainView,View.OnClickL
         mShequBtn.setOnClickListener(this);
         mFabuBtn.setOnClickListener(this);
         mWodeBtn.setOnClickListener(this);
-        mJinhuaBtn.performClick();
+
     }
 
     /**
